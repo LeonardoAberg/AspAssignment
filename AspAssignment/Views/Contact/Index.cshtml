@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "_Layout";
+}
+<header>
+    <div class="container">
+        <div class="logo">
+            <picture>
+                <img src="~/Images/logo.svg" alt="Cool picture lul">
+            </picture>
+        </div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Product" asp-action="Index">Products</a></li>
+                <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <li><a asp-controller="Profile" asp-action="Index">@User.Identity!.Name</a></li>
+                    <li><a asp-controller="Account" asp-action="SignOut">Sign out</a></li>
+                }
+                else
+                {
+                    <li><a asp-controller="Account" asp-action="SignIn">Sign in</a></li>
+                }
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <picture>
+        <img src="images/Hero bannar.png" alt="Cool picture lul">
+    </picture>
+</section>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <section class="registerform">
+        <div class="title">
+            <div class="headline">
+                <span>Write something</span>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <form>
+            <div class="form-group">
+                <div class="form-label">
+                    <label for="">Your Name*</label>
+                </div>
+                <input type="text" class="form-control" />
+                <div class="form-label">
+                    <label for="">Your Email*</label>
+                </div>
+                <input type="text" class="form-control" />
+                <div class="form-label">
+                    <label for="">Phone Number </label>
+                </div>
+                <input type="text" class="form-control" />
+                <div class="form-label">
+                    <label for="">Company (optional) </label>
+                </div>
+                <input type="text" class="form-control" />
+                <div class="form-label">
+                    <label for="">Something write*???</label>
+                </div>
+                <input type="text" class="form-control" />
+            </div>
+        </form>
+        <button type="submit" value="Submit">Submit</button>
+    </section>
+</div>
+<iframe class="design"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130266.64960402095!2d17.694995052246284!3d59.326001601337644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f763119640bcb%3A0xa80d27d3679d7766!2sStockholm!5e0!3m2!1ssv!2sse!4v1670504134955!5m2!1ssv!2sse"
+        width="1923" height="825" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+<footer>
+    <div class="copyright-text">
+        &copy; 2023 bmerketo. All Rights Reserved.
+    </div>
+</footer>

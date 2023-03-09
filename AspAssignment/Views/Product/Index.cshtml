@@ -1,0 +1,151 @@
+﻿@model IndexViewModel
+
+@{
+    Layout = "_Layout";
+}
+<header>
+    <div class="container">
+        <div class="logo">
+            <picture>
+                <img src="~/Images/logo.svg" alt="Cool picture lul">
+            </picture>
+        </div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Product" asp-action="Index">Products</a></li>
+                <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <li><a asp-controller="Profile" asp-action="Index">@User.Identity!.Name</a></li>
+                    <li><a asp-controller="Account" asp-action="SignOut">Sign out</a></li>
+                }
+                else
+                {
+                    <li><a asp-controller="Account" asp-action="SignIn">Sign in</a></li>
+                }
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="herobannerprodukt">
+    <picture>
+        <img src="images/Hero bannar.png" alt="Cool picture lul">
+    </picture>
+</section>
+
+<section class="heroprodukt">
+    <div class="heroprodcontain">
+        <div class="firstprodsect">
+            <picture>
+                <img src="images/Left side.png" alt="lul">
+            </picture>
+        </div>
+        <div class="prodcontent">
+            <div class="titles">
+                <p class="prodp">@Model.ProductModel.Name</p>
+                <p class="prodp2">@Model.ProductModel.Description</p>
+                <p>starstarstar 16 reviews</p>
+                <p>@Model.ProductModel.Price</p>
+                <button>add to cart</button>
+                <p>SKU @Model.ProductModel.SKU</p>
+                <p>Add to wishlist</p>
+                <p>Category: Apple Watch Lamp Wow Poggers</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="heroprodcontain">
+    <div class="prodknappar">
+        <button>description</button>
+        <button>additional info</button>
+        <button>reviews</button>
+        <button>shipping & delivery</button>
+        <button>design</button>
+    </div>
+</div>
+
+<div class="heroprodcontain">
+    <div class="prodalotoftext">
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo
+        dolores et ea rebum. Stet clita kasd <br>
+        gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.
+        accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing lectus
+        aliqua.
+        Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?
+        Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum
+        eleifend,
+        <br>
+        hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis eu, distinctio
+        tortor?
+        Dapibus delectus! Consequuntur luctus.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et
+        dolore
+        magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores et ea rebum. Stet
+        clita
+        kasd
+        gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor.
+    </div>
+    <div class="sistabilden">
+        <picture>
+            <img src="images/Bg.png" alt="pog">
+        </picture>
+    </div>
+</div>
+
+<section class="frontpage">
+    <div class="common">
+        <div class="heroprodcontain">
+            <h3>Related Products</h3>
+        </div>
+        <div class="container">
+            <div class="favs">
+                <div class="squares-picture">
+                    <img src="images/lillen.png" alt="abc">
+                </div>
+                <div class="squares-info">
+                    <h4 class="title">@Model.ProductModel.Name</h4>
+                    <h3 class="age">@Model.ProductModel.Price</h3>
+                </div>
+            </div>
+            <div class="favs">
+                <div class="squares-picture">
+                    <img src="images/lillen.png" alt="abc">
+                </div>
+                <div class="squares-info">
+                    <h4 class="title">@Model.ProductModel.Description</h4>
+                    <h3 class="age">@Model.ProductModel.Price</h3>
+                </div>
+            </div>
+            <div class="favs">
+                <div class="squares-picture">
+                    <img src="images/lillen.png" alt="abc">
+                </div>
+                <div class="squares-info">
+                    <h4 class="title">@Model.ProductModel.Name</h4>
+                    <h3 class="age">@Model.ProductModel.Price</h3>
+                </div>
+            </div>
+            <div class="favs">
+                <div class="squares-picture">
+                    <img src="images/lillen.png" alt="abc">
+                </div>
+                <div class="squares-info">
+                    <h4 class="title">@Model.ProductModel.Description</h4>
+                    <h3 class="age">@Model.ProductModel.Price</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="copyright-text">
+        &copy; 2023 bmerketo. All Rights Reserved.
+    </div>
+</footer>

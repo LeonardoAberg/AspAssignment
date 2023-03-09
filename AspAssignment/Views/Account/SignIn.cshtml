@@ -1,0 +1,48 @@
+﻿@model SignInForm
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <picture>
+                <img src="~/Images/logo.svg" alt="Cool picture lul">
+            </picture>
+        </div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Account" asp-action="SignIn">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <section class="registerform">
+        <div class="title">
+            <div class="headline">
+                <span>Please Login to Your Account</span>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <form asp-action="SignIn" method="post" asp-route-ReturnUrl="@Model.ReturnUrl">
+            <div class="mb-3">
+                <div asp-validation-summary="ModelOnly"></div>
+            </div>
+
+            <div class="mb-3">
+                <input asp-for="Email" placeholder="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <a asp-controller="Account" asp-action="SignUp">Don't have an account yet?</a>
+            <div class="mb-3">
+                <input asp-for="Password" placeholder="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <button type="submit" class="btn btn-success">SUBMIT</button>
+        </form>
+    </section>
+</div>
+<footer>
+    <div class="copyright-text">
+        &copy; 2023 bmerketo. All Rights Reserved.
+    </div>
+</footer>
